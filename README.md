@@ -1,55 +1,27 @@
 # processing_templates
 
-TODO: ここに自分の作成したprocessing codeの簡単な内容を紹介してください．
+TODO: 1秒ごとに色が変わる時計
 
 ## Installation
 
-TODO: この項目はclone, pushが終了したら消してください．
-
-githubでdaddygongon/processing_templatesをforkしてください．
-その後，
-```
-> mkdir /home/user_name
-> ssh-keygen
-> ssh-copy-id user_name@host_url
-> cd e:
-> git clone git@github.com:USER_NAME/processing_templates.git
-```
-でcloneしてください．
-
-そこへprocessing codeをcopyした後，
-```
-> git add -A
-> git commit -m 'first commit'
-> git push origin master
-```
-してください．
-: git remote -v
-で出てくるアドレスをLUNAに提出してください．
-このファイル(README.md)の修正も忘れずに．
-
 ## Usage
 
-TODO: ここに使い方を書いてください．
+TODO: 実行のみ
 
 ## Code review
 
-TODO: ここにcodeの概要と，どのような意図で作成したかを書いてください．
-どこの誰のコードを基にして書いたかの引用を忘れずに．
+TODO: 秒針、分針、時針と文字盤をそれぞれ分けて書いている。引用（https://yoppa.org/proga10/1419.html）
 
-sampleをそれぞれのdirectoryに置いています．
+そして普通の時計では物足りないので１秒ごとに背景の色が変わるように変化をつけ、１秒の時間を秒針だけではなく色の変化でより分かりやすした。
 
-今見ている，README.mdはmark downで書いています．
+色の変化はframeCountを使っている。
 
-robotx_class/REAME.orgはorg-modeで書いています．コードも綺麗にカラー表示されているでしょう．
-
-もちろんmark downでもcodeを綺麗に表示できます．
-書き方は，googleで調べてください．
-
-``` java
-rect(0, 0, 10, 10);
-```
-なんかです．
+if( frameCount%1 == 0){
+R+=5;
+G+=15;
+B+=25;
+BG = color(R, G, B);
+}
 
 ## License
 
